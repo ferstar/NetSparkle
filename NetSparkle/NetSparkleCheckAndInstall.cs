@@ -25,7 +25,7 @@ namespace AppLimit.NetSparkle
             if (Path.GetExtension(tempName).ToLower().Equals(".exe"))
             {
                 // build the command line 
-                installerCMD = tempName;
+                installerCMD = "\"" + tempName + "\"";
             }
             else if (Path.GetExtension(tempName).ToLower().Equals(".msi"))
             {
@@ -57,12 +57,12 @@ namespace AppLimit.NetSparkle
                 write.WriteLine("net stop \"" + sparkle.ServiceName + "\"");
 
             write.WriteLine(installerCMD);
-            write.WriteLine("cd " + workingDir);
+            write.WriteLine("cd \"" + workingDir + "\"");
 
             if (sparkle.EnableServiceMode)
                 write.WriteLine("net start \"" + sparkle.ServiceName + "\"");
             else
-                write.WriteLine(cmdLine);
+                write.WriteLine("\"" + cmdLine + "\"");
 
             write.Close();
 
