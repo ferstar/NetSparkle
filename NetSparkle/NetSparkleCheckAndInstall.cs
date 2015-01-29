@@ -24,9 +24,9 @@ namespace AppLimit.NetSparkle
             // get the file type
             if (Path.GetExtension(tempName).ToLower().Equals(".exe"))
             {
-                // build the command line 
-                //installerCMD = "\"" + tempName + "\"";
-                installerCMD = "start \"\" " + "\"" + tempName + "\" /sp- /silent /norestart";      // 更新包采用inno setup制作, 这里调用静默安装参数, 更新安装后程序可以自动打开
+                // build the command line
+                // 增加双引号
+                installerCMD ="start \"\" " + "\"" + tempName + "\" /sp- /silent /norestart";
             }
             else if (Path.GetExtension(tempName).ToLower().Equals(".msi"))
             {
@@ -49,25 +49,15 @@ namespace AppLimit.NetSparkle
             // generate the batch file                
             sparkle.ReportDiagnosticMessage("Generating MSI batch in " + Path.GetFullPath(cmd));
 
-            // StreamWriter defaults to using an instance of UTF8Encoding
-            // the UTF8Encoding may cause unreadable code problems in simplified Chinese OS
-            // so I changed the encoding here
+            //改文件编码gbk
             StreamWriter write = new StreamWriter(cmd, true, Encoding.Default, 512);
 
             //if (sparkle.EnableServiceMode)
             //    write.WriteLine("net stop \"" + sparkle.ServiceName + "\"");
-
-            // 这里的结果会是:在%temp%目录下新建一个cmd文件, 内容如下:
-            //@echo off
-            //start "" "tempName" /sp- /silent /norestart
-            //exit
-            //该脚本作用: 更新包下载完毕后启动安装, 去掉cmd黑框显示
-
             write.WriteLine("@echo off");
             write.WriteLine(installerCMD);
             write.WriteLine("exit");
-
-            //write.WriteLine("cd \"" + workingDir + "\"");
+            //write.WriteLine("cd " + "\"" + workingDir + "\"");
 
             //if (sparkle.EnableServiceMode)
             //    write.WriteLine("net start \"" + sparkle.ServiceName + "\"");

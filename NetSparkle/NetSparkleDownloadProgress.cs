@@ -39,7 +39,7 @@ namespace AppLimit.NetSparkle
             _unattend = Unattend;
 
             // init ui
-            btnInstallAndReLaunch.Visible = false;
+            //btnInstallAndReLaunch.Visible = false;
             lblHeader.Text = lblHeader.Text.Replace("APP", item.AppName + " " + item.Version);
             progressDownload.Maximum = 100;
             progressDownload.Minimum = 0;
@@ -47,7 +47,7 @@ namespace AppLimit.NetSparkle
 
             // show the right 
             Size = new Size(Size.Width, 107);
-            lblSecurityHint.Visible = false;                
+            //lblSecurityHint.Visible = false;                
             
             // get the filename of the download link
             String[] segments = item.DownloadLink.Split('/');
@@ -96,8 +96,8 @@ namespace AppLimit.NetSparkle
 
         private void Client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            progressDownload.Visible = false;
-            btnInstallAndReLaunch.Visible = true;            
+            //progressDownload.Visible = false;
+            //btnInstallAndReLaunch.Visible = true;            
 
             // report message            
             _sparkle.ReportDiagnosticMessage("Finished downloading file to: " + _tempName);
@@ -105,13 +105,14 @@ namespace AppLimit.NetSparkle
             if (!NetSparkleCheckAndInstall.CheckDSA(_sparkle, _item, _tempName))
             {
                 Size = new Size(Size.Width, 137);
-                lblSecurityHint.Visible = true;
+                //lblSecurityHint.Visible = true;
                 BackColor = Color.Tomato;
             }
                
             // Check the unattended mode
-            if (_unattend)
-                btnInstallAndReLaunch_Click(null, null);
+            //if (_unattend)
+            //    btnInstallAndReLaunch_Click(null, null);
+            NetSparkleCheckAndInstall.Install(_sparkle, _tempName);
         }
                
         private void Client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
@@ -119,9 +120,9 @@ namespace AppLimit.NetSparkle
             progressDownload.Value = e.ProgressPercentage;            
         }
 
-        private void btnInstallAndReLaunch_Click(object sender, EventArgs e)
-        {
-            NetSparkleCheckAndInstall.Install(_sparkle, _tempName);
-        }
+        //private void btnInstallAndReLaunch_Click(object sender, EventArgs e)
+        //{
+        //    NetSparkleCheckAndInstall.Install(_sparkle, _tempName);
+        //}
     }
 }

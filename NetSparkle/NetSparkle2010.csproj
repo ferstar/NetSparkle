@@ -147,40 +147,10 @@
     <EmbeddedResource Include="NetSparkleDownloadProgress.zh-TW.resx">
       <DependentUpon>NetSparkleDownloadProgress.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NetSparkleForm.bg.resx">
-      <DependentUpon>NetSparkleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NetSparkleForm.de.resx">
-      <DependentUpon>NetSparkleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NetSparkleForm.es-MX.resx">
-      <DependentUpon>NetSparkleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NetSparkleForm.fr.resx">
-      <DependentUpon>NetSparkleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NetSparkleForm.it.resx">
-      <DependentUpon>NetSparkleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NetSparkleForm.lt.resx">
-      <DependentUpon>NetSparkleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NetSparkleForm.nl.resx">
-      <DependentUpon>NetSparkleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NetSparkleForm.pt-BR.resx">
-      <DependentUpon>NetSparkleForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NetSparkleForm.resx">
       <DependentUpon>NetSparkleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NetSparkleForm.ru.resx">
-      <DependentUpon>NetSparkleForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NetSparkleForm.zh-CN.resx">
-      <DependentUpon>NetSparkleForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NetSparkleForm.zh-TW.resx">
       <DependentUpon>NetSparkleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NetSparkleMainWindows.resx">

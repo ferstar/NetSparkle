@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NetSparkleDownloadProgress));
             this.lblHeader = new System.Windows.Forms.Label();
             this.progressDownload = new System.Windows.Forms.ProgressBar();
-            this.btnInstallAndReLaunch = new System.Windows.Forms.Button();
-            this.lblSecurityHint = new System.Windows.Forms.Label();
             this.imgAppIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgAppIcon)).BeginInit();
             this.SuspendLayout();
@@ -47,18 +45,6 @@
             resources.ApplyResources(this.progressDownload, "progressDownload");
             this.progressDownload.Name = "progressDownload";
             // 
-            // btnInstallAndReLaunch
-            // 
-            resources.ApplyResources(this.btnInstallAndReLaunch, "btnInstallAndReLaunch");
-            this.btnInstallAndReLaunch.Name = "btnInstallAndReLaunch";
-            this.btnInstallAndReLaunch.UseVisualStyleBackColor = true;
-            this.btnInstallAndReLaunch.Click += new System.EventHandler(this.btnInstallAndReLaunch_Click);
-            // 
-            // lblSecurityHint
-            // 
-            resources.ApplyResources(this.lblSecurityHint, "lblSecurityHint");
-            this.lblSecurityHint.Name = "lblSecurityHint";
-            // 
             // imgAppIcon
             // 
             this.imgAppIcon.Image = global::AppLimit.NetSparkle.Properties.Resources.software_update_available1;
@@ -72,13 +58,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ControlBox = false;
-            this.Controls.Add(this.lblSecurityHint);
-            this.Controls.Add(this.btnInstallAndReLaunch);
             this.Controls.Add(this.progressDownload);
             this.Controls.Add(this.lblHeader);
             this.Controls.Add(this.imgAppIcon);
             this.Name = "NetSparkleDownloadProgress";
             this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.imgAppIcon)).EndInit();
             this.ResumeLayout(false);
@@ -91,8 +76,6 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.PictureBox imgAppIcon;
         private System.Windows.Forms.ProgressBar progressDownload;
-        private System.Windows.Forms.Button btnInstallAndReLaunch;
-        private System.Windows.Forms.Label lblSecurityHint;
 
 
     }

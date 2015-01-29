@@ -85,5 +85,6 @@ namespace AppLimit.NetSparkle
             // close the dialog
             Close();
         }
+
     }
 }
