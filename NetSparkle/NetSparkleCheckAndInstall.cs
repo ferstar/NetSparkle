@@ -48,7 +48,10 @@ namespace AppLimit.NetSparkle
             // generate the batch file                
             sparkle.ReportDiagnosticMessage("Generating MSI batch in " + Path.GetFullPath(cmd));
 
-            StreamWriter write = new StreamWriter(cmd);
+            // StreamWriter defaults to using an instance of UTF8Encoding
+            // the UTF8Encoding may cause unreadable code problems in simplified Chinese OS
+            // so I changed the encoding here
+            StreamWriter write = new StreamWriter(cmd, true, Encoding.Default, 512);
 
             if (sparkle.EnableServiceMode)
                 write.WriteLine("net stop \"" + sparkle.ServiceName + "\"");
