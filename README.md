@@ -17,9 +17,8 @@ Fork from netsparkle/trunk/NetSparkle commit 105790 from [http://netsparkle.code
         ......
         // 检查更新
         Console.WriteLine("check update...");
-        string UpdateUrl = spph.Properties.Settings.Default.DbServer;   // 获取server地址
-        _sparkle = new Sparkle("ftp://" + UpdateUrl + "/spph/versioninfo.xml"); // 传入更新文件地址
-        //_sparkle.ShowDiagnosticWindow = true;     // 更新程序调试窗口,日志在%temp%\spph_update.log
+        _sparkle = new Sparkle("server/root/versioninfo.xml"); // 传入更新文件地址
+        //_sparkle.ShowDiagnosticWindow = true;     // 更新程序调试窗口,日志在%temp%\spph_update_*.log
         _sparkle.StartLoop(true, true);
         ......
         // 停止检测更新
@@ -27,3 +26,5 @@ Fork from netsparkle/trunk/NetSparkle commit 105790 from [http://netsparkle.code
         ......
     }
 3.服务器端配置sample位于NetSparkle\Extras\Sample Update AppCast\Server Root
+
+4.更新检测监测字段位于AssemblyInfo.cs内(程序名和版本号)其余没大作用
