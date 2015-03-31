@@ -20,7 +20,8 @@ namespace AppLimit.NetSparkle
             InitializeComponent();
 
             // init logfile
-            sw = File.CreateText(Path.Combine(Environment.ExpandEnvironmentVariables("%temp%"), "spph_update.log"));
+            string logfile = "spph_update_" + Guid.NewGuid() + ".log";
+            sw = File.CreateText(Path.Combine(Environment.ExpandEnvironmentVariables("%temp%"), logfile));
         }
 
         public void Report(String message)
